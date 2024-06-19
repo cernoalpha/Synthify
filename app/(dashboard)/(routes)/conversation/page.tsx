@@ -12,18 +12,22 @@ import { Button } from "@/components/ui/button"
 import axios from "axios"
 import { useRouter } from 'next/navigation'
 import { useState } from "react"
-import { ChatCompletionRequestMessage } from "openai";
 import { Empty } from "@/components/empty"
 import { Loader } from "@/components/loader"
 import { cn } from "@/lib/utils"
 import { UserAvatar } from "@/components/user-avatar"
 import { BotAvatar } from "@/components/bot-avatar"
 
+interface Message {
+    role: string;
+    content: string;
+  }
+  
 
 const ConversationPage = () => {
     const router = useRouter()
 
-    const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
+    const [messages, setMessages] = useState<Message[]>([])
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -37,7 +41,7 @@ const ConversationPage = () => {
         console.log(values)
         try {
 
-            const userMessage: ChatCompletionRequestMessage = {
+            const userMessage: Message = {
                 role: "user",
                 content: values.prompt
             }

@@ -30,8 +30,12 @@ export async function POST(
       return new NextResponse("Messages are required", { status: 400 })
     }
 
+    const system_prompt = "You are a code generator. You must answer only in markdown code snippets. Use code comments for explanations."
+
+
     const responseSync = await client.chat.completions.create({
       project_id,
+      system_prompt,
       messages,
       stream: false 
     });
