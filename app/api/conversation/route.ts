@@ -2,6 +2,8 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import Prem from '@premai/prem-sdk';
+import { checkApiLimit, increaseApiLimit } from "@/lib/api-limit";
+
 
 
 const APIKEY = process.env.OPENAI_API_KEY
@@ -30,6 +32,12 @@ export async function POST(
       return new NextResponse("Messages are required", { status: 400 })
     }
 
+    const freeTrial = await checkApiLimit()
+
+    if (!freeTrial) {
+      return new NextResponse("Free trial expired", { status: 403 });
+    }
+
     const responseSync = await client.chat.completions.create({
       project_id,
       messages,
@@ -38,6 +46,9 @@ export async function POST(
     
     let response = responseSync.choices[0].message
     delete response.tool_calls;
+
+    await increaseApiLimit();
+
     return NextResponse.json(response)
 
     

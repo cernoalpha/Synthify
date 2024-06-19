@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from "@clerk/nextjs/server";
 import Replicate from 'replicate';
-
+import { checkApiLimit, increaseApiLimit } from "@/lib/api-limit";
 
 const APIKEY = process.env.REPLICATE_API_TOKEN
 
@@ -39,6 +39,11 @@ export async function POST(
         if (!resolution) {
             return new NextResponse("Missing resolution", { status: 400 });
         }
+        const freeTrial = await checkApiLimit()
+
+        if (!freeTrial) {
+          return new NextResponse("Free trial expired", { status: 403 });
+        }
 
         const output = await replicate.run(
             "stability-ai/stable-diffusion:ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4",
@@ -55,6 +60,9 @@ export async function POST(
             }
         );
         console.log("response", output)
+        
+        await increaseApiLimit();
+
         return NextResponse.json(output)
 
 
