@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { Zap } from "lucide-react";
+import { ChevronsUp } from "lucide-react";
 import { FC, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Button } from "./ui/button";
@@ -30,7 +30,7 @@ export const SubscriptionButton: FC<SubscriptionButtonProps> = ({ isPro = false 
   return (
     <Button disabled={loading} variant={isPro ? "default" : "premium"} onClick={onClick}>
       {isPro ? "Manage Subscription" : "Upgrade to Pro"}
-      {!isPro && <Zap className="w-4 h-4 ml-2 fill-white" />}
+      {!isPro && <ChevronsUp className="w-6 h-6 ml-2 fill-white" />}
     </Button>
   );
 };

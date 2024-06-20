@@ -3,7 +3,7 @@
 import { FC, useEffect, useState } from "react";
 
 import { MAX_FREE_COUNTS } from "@/constants";
-import { Zap } from "lucide-react";
+import { ChevronsUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -42,7 +42,7 @@ export const FreeCounter: FC<FreeCounterProps> = ({ apiLimitCount = 0, isPro = f
             <Progress className="h-3" value={(apiLimitCount / MAX_FREE_COUNTS) * 100} />
           </div>
           <Button variant="premium" className="w-full" onClick={proModal.onOpen}>
-            Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+            Upgrade <ChevronsUp className="w-6 h-6 ml-2 fill-white" />
           </Button>
         </CardContent>
       </Card>

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import useProModal from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
-import { Check, Code, ImageIcon, MessageSquare, Music, VideoIcon, Zap } from "lucide-react";
+import { Check, Code, ImageIcon, Music, VideoIcon, ChevronsUp } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,27 +20,27 @@ export const ProModal = () => {
     {
       label: "Image Generation",
       icon: ImageIcon,
-      color: "text-pink-700",
-      bgColor: "bg-pink-700/10",
+      color: "text-sky-700",
+      bgColor: "bg-sky-700/10",
     },
     {
-    label: "Code Generation",
-    icon: Code,
-    color: "text-green-700",
-    bgColor: "bg-green-700/10",
-  },
+      label: "Video Generation",
+      icon: VideoIcon,
+      color: "text-yellow-700",
+      bgColor: "bg-yellow-700/10",
+    },
     {
       label: "Music Generation",
       icon: Music,
-      color: "text-emerald-500",
-      bgColor: "bg-emerald-500/10",
-      },
-      {
-        label: "Video Generation",
-        icon: VideoIcon,
-        color: "text-orange-700",
-        bgColor: "bg-orange-700/10",
-      },
+      color: "text-pink-500",
+      bgColor: "bg-pink-500/10",
+    },
+    {
+      label: "Code Generation",
+      icon: Code,
+      color: "text-lime-700",
+      bgColor: "bg-lime-700/10",
+    },
   ];
 
   const onSubscribe = async () => {
@@ -70,22 +70,24 @@ export const ProModal = () => {
             </div>
           </DialogTitle>
           <DialogDescription className="text-center pt-2 space-y-2 text-zinc-900 font-medium">
-            {tools.map((tool) => (
-              <Card key={tool.label} className="p-3 border-black/5 flex items-center justify-between">
-                <div className="flex items-center gap-x-4">
-                  <div className={cn("p-2 flex w-fit rounded-md", tool.bgColor)}>
-                    <tool.icon className={cn("h-6 w-6", tool.color)} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {tools.map((tool) => (
+                <Card key={tool.label} className="p-3 border-black/5 flex items-center justify-between">
+                  <div className="flex items-center gap-x-4">
+                    <div className={cn("p-2 flex w-fit rounded-md", tool.bgColor)}>
+                      <tool.icon className={cn("h-6 w-6", tool.color)} />
+                    </div>
+                    <div className="font-semibold text-sm">{tool.label}</div>
                   </div>
-                  <div className="font-semibold text-sm">{tool.label}</div>
-                </div>
-                <Check className="text-primary w-5 h-5" />
-              </Card>
-            ))}
+                  <Check className="text-primary w-5 h-5" />
+                </Card>
+              ))}
+            </div>
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
           <Button disabled={loading} size="lg" variant="premium" className="w-full" onClick={onSubscribe}>
-            Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+            Upgrade <ChevronsUp className="w-6 h-6 ml-2 fill-white" />
           </Button>
         </DialogFooter>
       </DialogContent>

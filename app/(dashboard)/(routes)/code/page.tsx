@@ -111,7 +111,7 @@ const CodePage = () => {
               <Loader />
             </div>
           )}
-          {messages.length === 0 && !isLoading && <Empty label="Start typing to have a conversation." />}
+          {messages.length === 0 && !isLoading && <Empty label="Start typing to generate code." />}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message, index) => (
               <div
