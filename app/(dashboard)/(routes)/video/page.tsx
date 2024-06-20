@@ -59,8 +59,8 @@ const VideoPage = () => {
         title="Video Generation"
         description="Our most advanced AI Video Generation model."
         icon={Video}
-        iconColor="text-orange-700"
-        bgColor="bg-orange-700/10"
+        iconColor="text-yellow-700"
+        bgColor="bg-yellow-700/10"
       />
       <div className="px-4 lg:px-8">
         <div>

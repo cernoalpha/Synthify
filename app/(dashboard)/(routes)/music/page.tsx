@@ -60,8 +60,8 @@ const MusicPage = () => {
         title="Music Generation"
         description="Our most advanced AI Music Generation model."
         icon={Music}
-        iconColor="text-emerald-500"
-        bgColor="bg-emerald-500/10"
+        iconColor="text-pink-500"
+        bgColor="bg-pink-500/10"
       />
       <div className="px-4 lg:px-8">
         <div>

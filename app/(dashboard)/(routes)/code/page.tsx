@@ -75,8 +75,8 @@ const CodePage = () => {
         title="Code Generation"
         description="Our most advanced AI Code Generation model."
         icon={Code}
-        iconColor="text-green-700"
-        bgColor="bg-green-700/10"
+        iconColor="text-lime-700"
+        bgColor="bg-lime-700/10"
       />
       <div className="px-4 lg:px-8">
         <div>
@@ -124,10 +124,10 @@ const CodePage = () => {
               >
                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
                 <ReactMarkdown
-                  className="text-sm overflow-hidden leading-7"
+                  className="text-sm overflow-hidden leading-7 bg-white rounded-lg"
                   components={{
                     pre: ({ node, ...props }) => (
-                      <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                      <div className="overflow-auto w-full my-2 bg-white/10 p-2 rounded-lg">
                         <pre {...props} />
                       </div>
                     ),
