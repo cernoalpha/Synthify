@@ -8,15 +8,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 import * as z from "zod";
-
-import { BotAvatar } from "@/components/bot-avatar";
-import { Empty } from "@/components/empty";
+import { BotAvatar } from "@/components/ai-icon";
+import { UserAvatar } from "@/components/user-icon";
+import { Empty } from "@/components/no-usage";
 import { Heading } from "@/components/heading";
 import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { UserAvatar } from "@/components/user-avatar";
 import { cn } from "@/lib/utils";
 
 import useProModal from "@/hooks/use-pro-modal";
@@ -72,8 +71,8 @@ const CodePage = () => {
   return (
     <div>
       <Heading
-        title="Code Generation"
-        description="Our most advanced AI Code Generation model."
+        title="AI Code Generation"
+        description="Boost your coding efficiency with AI-driven code generation. Input a description of what you need, and receive accurate code snippets or entire programs in return. This tool is invaluable for developers, educators, and anyone looking to streamline their programming tasks."
         icon={Code}
         iconColor="text-lime-700"
         bgColor="bg-lime-700/10"

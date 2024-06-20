@@ -43,10 +43,10 @@ export default function DashboardPage() {
     <div>
       <div className="mb-8 space-y-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center">
-          Explore the power of AI
+          Dashboard Overview
         </h2>
-        <p className="text-muted-foreground font-light text-sm md:text-lg text-center">
-          Chat with the smartest AI - Experience the power of AI
+        <p className="text-muted-foreground font-light text-sm md:text-lg text-center max-w-2xl mx-auto">
+          Your personalized hub for accessing and managing AI tools. Get an overview of your recent activity, usage statistics, and quick access to all features. Navigate effortlessly to image, video, music, and code generation tools, manage your account, and explore new capabilities.
         </p>
         <div className="px-4 md:px-20 lg:px-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -62,7 +62,7 @@ export default function DashboardPage() {
                     {tool.label}
                   </div>
                 </div>
-                <ArrowRight className="w-5 h-5"/>
+                <ArrowRight className="w-5 h-5" />
               </Card>
             ))}
           </div>

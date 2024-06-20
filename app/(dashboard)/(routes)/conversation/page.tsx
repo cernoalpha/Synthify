@@ -12,11 +12,11 @@ import { Button } from "@/components/ui/button"
 import axios from "axios"
 import { useRouter } from 'next/navigation'
 import { useState } from "react"
-import { Empty } from "@/components/empty"
+import { Empty } from "@/components/no-usage";
 import { Loader } from "@/components/loader"
 import { cn } from "@/lib/utils"
-import { UserAvatar } from "@/components/user-avatar"
-import { BotAvatar } from "@/components/bot-avatar"
+import { BotAvatar } from "@/components/ai-icon";
+import { UserAvatar } from "@/components/user-icon";
 import useProModal from "@/hooks/use-pro-modal"
 
 interface Message {

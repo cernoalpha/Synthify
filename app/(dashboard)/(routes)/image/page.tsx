@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { Empty } from "@/components/empty";
+import { Empty } from "@/components/no-usage";
 import { Heading } from "@/components/heading";
 import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
@@ -60,8 +60,8 @@ const ImagePage = () => {
   return (
     <div>
       <Heading
-        title="Image Generation"
-        description="Our most advanced AI Image Generation model."
+        title="AI Image Generation"
+        description="Create stunning visuals with ease using our advanced AI models. Simply input a text prompt, and watch as high-quality images are generated in seconds. Perfect for artists, marketers, and content creators looking to enhance their visual content."
         icon={ImageIcon}
         iconColor="text-sky-700"
         bgColor="bg-sky-700/10"

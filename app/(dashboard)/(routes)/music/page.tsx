@@ -7,8 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
-import { Empty } from "@/components/empty";
+import { Empty } from "@/components/no-usage";
 import { Heading } from "@/components/heading";
 import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
@@ -57,8 +56,8 @@ const MusicPage = () => {
   return (
     <div>
       <Heading
-        title="Music Generation"
-        description="Our most advanced AI Music Generation model."
+        title="AI Music Generation"
+        description="Compose unique music tracks from simple text prompts. Whether you’re in the music industry, entertainment, or just a hobbyist, our AI-powered tool helps you create personalized soundtracks and explore new musical ideas effortlessly."
         icon={Music}
         iconColor="text-pink-500"
         bgColor="bg-pink-500/10"

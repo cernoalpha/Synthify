@@ -7,8 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
-import { Empty } from "@/components/empty";
+import { Empty } from "@/components/no-usage";
 import { Heading } from "@/components/heading";
 import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
@@ -56,8 +55,8 @@ const VideoPage = () => {
   return (
     <div>
       <Heading
-        title="Video Generation"
-        description="Our most advanced AI Video Generation model."
+        title="AI Video Generation"
+        description="Transform text descriptions into engaging video clips. Ideal for animations, educational content, and digital marketing, our AI video generation tool allows you to produce professional-grade videos without any prior expertise in video editing."
         icon={Video}
         iconColor="text-yellow-700"
         bgColor="bg-yellow-700/10"
