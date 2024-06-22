@@ -33,16 +33,16 @@ export const FreeCounter: FC<FreeCounterProps> = ({ apiLimitCount = 0, isPro = f
 
   return (
     <div className="px-3">
-      <Card className="bg-white/10 border-0">
+      <Card className="bg-blue-700/50 border-0">
         <CardContent className="py-6">
-          <div className="text-center text-sm text-white mb-4 space-y-2">
+          <div className="text-center text-sm text-black mb-4 space-y-2">
             <p>
               {apiLimitCount} / {MAX_FREE_COUNTS} Free Generations
             </p>
             <Progress className="h-3" value={(apiLimitCount / MAX_FREE_COUNTS) * 100} />
           </div>
           <Button variant="premium" className="w-full" onClick={proModal.onOpen}>
-            Upgrade <ChevronsUp className="w-6 h-6 ml-2 fill-white" />
+            Upgrade to pro <ChevronsUp className="w-6 h-6 ml-2 fill-white" />
           </Button>
         </CardContent>
       </Card>

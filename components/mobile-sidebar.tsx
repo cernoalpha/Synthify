@@ -30,7 +30,7 @@ const MobileSidebar = ({apiLimitCount = 0, isPro =false}: MobileSidebarProps) =>
                     <Menu />
                 </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="p-0">
+            <SheetContent side="top" className="p-0 overflow-scroll bg-secondary pr-10">
                 <Sidebar isPro={isPro} apiLimitCount={apiLimitCount}/>
             </SheetContent>
         </Sheet>
