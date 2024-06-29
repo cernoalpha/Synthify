@@ -5,7 +5,6 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import FreeCounter from "./usage-count";
 import { UserButton } from "@clerk/nextjs"
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"] });
